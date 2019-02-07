@@ -5,7 +5,8 @@ class ServiceDetails extends React.Component {
         super(props)
         this.serviceService = ServiceService.getInstance()
         this.state = {
-            services: []
+            services: [],
+            service: {}
         }
     }
     componentDidMount() {
@@ -18,7 +19,13 @@ class ServiceDetails extends React.Component {
             )
     }
     selectService = id =>
-        console.log(id)
+        this.serviceService
+            .findServiceById(id)
+            .then(service =>
+                this.setState({
+                    service: service
+                })
+            )
     render() {
         return(
             <div>
