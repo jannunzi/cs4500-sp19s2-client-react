@@ -21,6 +21,18 @@ class Users extends React.Component {
         return(
             <div>
                 <h3>Users</h3>
+                <table className="table">
+                    <tbody>
+                    {
+                        this.state.users
+                            .map(user =>
+                                <tr key={user.id}>
+                                    <td>{user.username}</td>
+                                </tr>
+                            )
+                    }
+                    </tbody>
+                </table>
             </div>
         )
     }
