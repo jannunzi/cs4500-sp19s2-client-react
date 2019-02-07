@@ -14,7 +14,8 @@ class ServiceDetails extends React.Component {
             .findAllServices()
             .then(services =>
                 this.setState({
-                    services: services
+                    services: services,
+                    service: services[0]
                 })
             )
     }
