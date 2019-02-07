@@ -8,6 +8,15 @@ class Users extends React.Component {
             users: []
         }
     }
+    componentDidMount() {
+        this.userService
+            .findAllUsers()
+            .then(users =>
+                this.setState({
+                    users: users
+                })
+            )
+    }
     render() {
         return(
             <div>
