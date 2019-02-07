@@ -2,21 +2,33 @@ import React from 'react'
 import {BrowserRouter as Router, Link, Route} from 'react-router-dom'
 import Users from './Users'
 import Services from './Services'
+import ServiceDetails from './ServiceDetails'
 const Admin = () =>
 <div>
     <h2>Admin</h2>
     <Router>
-        <div>
-            <Link to="/admin/users">Users</Link>
-            <Link to="/admin/services">Services</Link>
-            <Route
-                path="/admin/users"
-                exact
-                component={Users}/>
-            <Route
-                path="/admin/services"
-                exact
-                component={Services}/>
+        <div className="row">
+            <div className="col-2">
+                <Link to="/admin/users">Users</Link>
+                <br/>
+                <Link to="/admin/services">Services</Link>
+                <br/>
+                <Link to="/admin/services/1">Service Details</Link>
+            </div>
+            <div className="col-10">
+                <Route
+                    path="/admin/users"
+                    exact
+                    component={Users}/>
+                <Route
+                    path="/admin/services"
+                    exact
+                    component={Services}/>
+                <Route
+                    path="/admin/services/:id"
+                    exact
+                    component={ServiceDetails}/>
+            </div>
         </div>
     </Router>
 </div>
