@@ -21,6 +21,18 @@ class ServiceDetails extends React.Component {
         return(
             <div>
                 <h3>Service Details</h3>
+                <select className="form-control">
+                    {
+                        this.state.services
+                            .map(service =>
+                                <option
+                                    value={service.id}
+                                    key={service.id}>
+                                    {service.title}
+                                </option>
+                            )
+                    }
+                </select>
             </div>
         )
     }
