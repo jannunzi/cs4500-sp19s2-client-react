@@ -17,11 +17,15 @@ class ServiceDetails extends React.Component {
                 })
             )
     }
+    selectService = id =>
+        console.log(id)
     render() {
         return(
             <div>
                 <h3>Service Details</h3>
-                <select className="form-control">
+                <select
+                    onChange={(e) => this.selectService(e.target.value)}
+                    className="form-control">
                     {
                         this.state.services
                             .map(service =>
