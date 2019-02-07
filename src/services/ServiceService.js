@@ -6,6 +6,9 @@ export default class ServiceService {
         }
         return this.instance
     }
+    findServiceById = serviceId =>
+        fetch(`http://localhost:8080/api/services/${serviceId}`)
+            .then(response => response.json())
     findAllServices = () =>
         fetch("http://localhost:8080/api/services")
             .then(response => response.json())
