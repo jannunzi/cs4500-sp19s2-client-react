@@ -44,6 +44,10 @@ class ServiceDetails extends React.Component {
                             )
                     }
                 </select>
+                <label>Service Title</label><br/>
+                <input
+                    className="form-control"
+                    value={this.state.service.title}/>
             </div>
         )
     }
