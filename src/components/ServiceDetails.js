@@ -12,20 +12,24 @@ class ServiceDetails extends React.Component {
     componentDidMount() {
         this.serviceService
             .findAllServices()
-            .then(services =>
-                this.setState({
-                    services: services,
-                    service: services[0]
-                })
+            .then(services => {
+                    this.props.history.push("/admin/services/" + services[0].id)
+                    this.setState({
+                        services: services,
+                        service: services[0]
+                    })
+                }
             )
     }
     selectService = id =>
         this.serviceService
             .findServiceById(id)
-            .then(service =>
-                this.setState({
-                    service: service
-                })
+            .then(service => {
+                    this.props.history.push("/admin/services/" + id)
+                    this.setState({
+                        service: service
+                    })
+                }
             )
     render() {
         return(
