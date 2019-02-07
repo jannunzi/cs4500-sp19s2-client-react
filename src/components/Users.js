@@ -28,6 +28,8 @@ class Users extends React.Component {
                             .map(user =>
                                 <tr key={user.id}>
                                     <td>{user.username}</td>
+                                    <td>{user.firstName}</td>
+                                    <td>{user.lastName}</td>
                                 </tr>
                             )
                     }
