@@ -5,12 +5,13 @@ import UserDetails from './UserDetails'
 import Services from './Services'
 import ServiceDetails from './ServiceDetails'
 import ServiceCategories from './ServiceCategories'
+import ServiceCategoryDetails from './ServiceCategoryDetails'
 const Admin = () =>
 <div>
     <h2>Admin</h2>
     <Router>
         <div className="row">
-            <div className="col-2">
+            <div className="col-3">
                 <Link to="/admin/users">Users</Link>
                 <br/>
                 <Link to="/admin/users/1">User Details</Link>
@@ -19,9 +20,11 @@ const Admin = () =>
                 <br/>
                 <Link to="/admin/services/1">Service Details</Link>
                 <br/>
-                <Link to="/admin/servicesCategories">Service Categories</Link>
+                <Link to="/admin/service-categories">Service Categories</Link>
+                <br/>
+                <Link to="/admin/service-categories/1">Service Category Details</Link>
             </div>
-            <div className="col-10">
+            <div className="col-9">
                 <Route
                     path="/admin/users"
                     exact
@@ -39,9 +42,13 @@ const Admin = () =>
                     exact
                     component={ServiceDetails}/>
                 <Route
-                    path="/admin/servicesCategories"
+                    path="/admin/service-categories"
                     exact
                     component={ServiceCategories}/>
+                <Route
+                    path="/admin/service-categories/:id"
+                    exact
+                    component={ServiceCategoryDetails}/>
             </div>
         </div>
     </Router>
