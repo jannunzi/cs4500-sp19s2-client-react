@@ -6,7 +6,10 @@ class ServiceDetails extends React.Component {
         this.serviceService = ServiceService.getInstance()
         this.state = {
             services: [],
-            service: {}
+            service: {
+                title: '',
+                id: 1
+            }
         }
     }
     componentDidMount() {
@@ -36,6 +39,7 @@ class ServiceDetails extends React.Component {
             <div>
                 <h3>Service Details</h3>
                 <select
+                    value={this.state.service.id}
                     onChange={(e) => this.selectService(e.target.value)}
                     className="form-control">
                     {
@@ -51,6 +55,7 @@ class ServiceDetails extends React.Component {
                 </select>
                 <label>Service Title</label><br/>
                 <input
+                    onChange={() => {}}
                     className="form-control"
                     value={this.state.service.title}/>
             </div>
