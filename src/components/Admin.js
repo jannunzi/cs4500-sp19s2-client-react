@@ -14,6 +14,8 @@ import FAQs from './FAQs'
 import FAQDetails from './FAQDetails'
 import FAQAnswers from './FAQAnswers'
 import FAQAnswerDetails from './FAQAnswerDetails'
+import Quotes from './Quotes'
+import QuoteDetails from './QuoteDetails'
 
 const Admin = () =>
 <div>
@@ -21,6 +23,10 @@ const Admin = () =>
     <Router>
         <div className="row">
             <div className="col-3">
+                <Link to="/admin/quotes">Quotes</Link>
+                <br/>
+                <Link to="/admin/quotes/1">Quote Details</Link>
+                <br/>
                 <Link to="/admin/users">Users</Link>
                 <br/>
                 <Link to="/admin/users/1">User Details</Link>
@@ -50,6 +56,14 @@ const Admin = () =>
                 <Link to="/admin/faq-answers/1">FAQ Answer Details</Link>
             </div>
             <div className="col-9">
+                <Route
+                    path="/admin/quotes"
+                    exact
+                    component={Quotes}/>
+                <Route
+                    path="/admin/quotes/:id"
+                    exact
+                    component={QuoteDetails}/>
                 <Route
                     path="/admin/users"
                     exact
