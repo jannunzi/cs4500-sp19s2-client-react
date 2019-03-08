@@ -14,8 +14,10 @@ import FAQs from './FAQs'
 import FAQDetails from './FAQDetails'
 import FAQAnswers from './FAQAnswers'
 import FAQAnswerDetails from './FAQAnswerDetails'
-import Quotes from './Quotes'
 import QuoteDetails from './QuoteDetails'
+import QuoteListContainer from '../containers/QuoteListContainer'
+import QuoteService from '../services/QuoteService'
+const quoteService = QuoteService.getInstance()
 
 const Admin = () =>
 <div>
@@ -59,7 +61,7 @@ const Admin = () =>
                 <Route
                     path="/admin/quotes"
                     exact
-                    component={Quotes}/>
+                    render={() => <QuoteListContainer service={quoteService}/>}/>
                 <Route
                     path="/admin/quotes/:id"
                     exact

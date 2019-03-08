@@ -1,0 +1,77 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`[QuoteListContainer renders correctly] 1`] = `
+<div>
+  <div>
+    <h3>
+      Quotes 
+      0
+    </h3>
+    <table
+      className="table"
+    >
+      <tbody>
+        <tr>
+          <td>
+            <input
+              className="job-title-fld"
+              onChange={[Function]}
+              value=""
+            />
+            <button
+              className="create-quote-btn"
+              onClick={[Function]}
+            >
+              Add
+            </button>
+            <button
+              className="update-quote-btn"
+              onClick={[Function]}
+            >
+              Update
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+`;
+
+exports[`[QuoteListContainer renders correctly] 2`] = `
+<div>
+  <div>
+    <h3>
+      Quotes 
+      0
+    </h3>
+    <table
+      className="table"
+    >
+      <tbody>
+        <tr>
+          <td>
+            <input
+              className="job-title-fld"
+              onChange={[Function]}
+              value="J123"
+            />
+            <button
+              className="create-quote-btn"
+              onClick={[Function]}
+            >
+              Add
+            </button>
+            <button
+              className="update-quote-btn"
+              onClick={[Function]}
+            >
+              Update
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+`;
