@@ -9,6 +9,7 @@ export default class QuoteService {
     findQuoteById = quoteId =>
         fetch(`http://localhost:8080/api/quotes/${quoteId}`)
             .then(response => response.json())
+            .catch(err => console.log(err))
     findAllQuotes = () =>
         fetch("http://localhost:8080/api/quotes")
             .then(response => response.json())
