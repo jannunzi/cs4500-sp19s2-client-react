@@ -17,10 +17,10 @@ const ServiceTabNavigator = ({serviceCategories}) =>
                 }
             </ul>
             <br/>
-            <Route path="/Home Improvements" render={() =>
-                <ServiceTabItem services={serviceCategories[0].services.splice(0, 6)}/>}/>
+            <Route path="/Home" render={() =>
+                <ServiceTabItem services={serviceCategories[0].services}/>}/>
             <Route path="/Pets" render={() =>
-                <ServiceTabItem services={serviceCategories[1].services.splice(0, 6)}/>}/>
+                <ServiceTabItem services={serviceCategories[1].services}/>}/>
         </div>
     </Router>
 
