@@ -1,39 +1,22 @@
 import React from 'react'
 
-const ServiceCategoryPills = () =>
+const ServiceCategoryPills = ({serviceCategories}) =>
     <ul className="nav nav-pills nav-fill wd-shadow wd-padding-20">
-        <li className="nav-item">
-            <a className="nav-link btn-lg text-center"
-               href="/services">
-                <i className="fa fa-home"/>
-                <br/>
-                Home
-            </a>
-        </li>
-        <li className="nav-item">
-            <a className="nav-link btn-lg text-center"
-               href="/services">
-                <i className="fa fa-paw"/>
-                <br/>
-                Pets
-            </a>
-        </li>
-        <li className="nav-item">
-            <a className="nav-link btn-lg text-center"
-               href="/services">
-                <i className="fa fa-heart"/>
-                <br/>
-                Wellness
-            </a>
-        </li>
-        <li className="nav-item">
-            <a className="nav-link btn-lg text-center"
-               href="/services">
-                <i className="fa fa-briefcase"/>
-                <br/>
-                Business
-            </a>
-        </li>
+
+        {
+            serviceCategories.map(serviceCategory => (
+                <li key={serviceCategory.id}
+                    className="nav-item">
+                    <a className="nav-link btn-lg text-center"
+                       href="/services">
+                        <i className={`fa ${serviceCategory.icon}`}/>
+                        <br/>
+                        {serviceCategory.title}
+                    </a>
+                </li>
+            ))
+        }
+
         <li className="nav-item">
             <a className="nav-link btn-lg text-center"
                href="/services">
