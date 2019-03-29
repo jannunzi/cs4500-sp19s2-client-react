@@ -3,7 +3,7 @@ import SearchBar from './SearchBar/SearchBar'
 import ServiceTabNavigator from './ServiceTabNavigator/ServiceTabNavigator'
 import ServiceCategoryPills from './ServiceCategoryPills/ServiceCategoryPills'
 import serviceCategories from '../data/service-categories.mock.json'
-const Home = ({history}) =>
+const Home = ({history, pillServiceCategories}) =>
     <div>
         <div className="row">
             <div className="col-8">
@@ -24,7 +24,7 @@ const Home = ({history}) =>
         <br/>
         <br/>
         <div>
-            <ServiceCategoryPills/>
+            <ServiceCategoryPills serviceCategories={pillServiceCategories}/>
         </div>
         <br/>
         <br/>
