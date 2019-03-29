@@ -4,7 +4,7 @@ import ServiceCategorySectionList from './ServiceCategorySectionList'
 import serviceCategories from '../../data/service-categories.mock.json'
 import SearchBar from '../SearchBar/SearchBar'
 
-const ServiceNavigator = () =>
+const ServiceNavigator = ({serviceCategories}) =>
     <div>
         <div className="row">
             <div className="col-8">

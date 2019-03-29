@@ -18,7 +18,8 @@ class App extends Component {
         this.serviceCategoryService = ServiceCategoryService.getInstance()
         this.state = {
             pillServiceCategories: serviceCategories,
-            tabServiceCategories: serviceCategories
+            tabServiceCategories: serviceCategories,
+            allServices: serviceCategories
         }
     }
     componentDidMount() {
@@ -29,6 +30,10 @@ class App extends Component {
         this.serviceCategoryService.findAllServiceCategories(6)
             .then(serviceCategories => this.setState({
                 tabServiceCategories: serviceCategories
+            }))
+        this.serviceCategoryService.findAllServiceCategories()
+            .then(serviceCategories => this.setState({
+                allServices: serviceCategories
             }))
     }
   render() {
@@ -61,7 +66,8 @@ class App extends Component {
                   <Route
                       path="/services"
                       exact
-                      component={ServiceNavigator}/>
+                      render={() =>
+                          <ServiceNavigator serviceCategories={this.state.allServices}/>}/>
                   <Route
                       path="/admin"
                       exact
