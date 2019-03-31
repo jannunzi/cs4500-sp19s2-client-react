@@ -14,7 +14,7 @@ const Review = ({review}) =>
         <br/>
         <div>{review.date}</div>
         <br/>
-        <div class="alert alert-secondary" role="alert">
+        <div className="alert alert-secondary" role="alert">
             {review.reply}
         </div>
         <hr/>

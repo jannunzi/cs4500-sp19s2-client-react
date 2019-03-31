@@ -129,8 +129,8 @@ const Provider = ({provider}) =>
         </div>
         <br/>
         <div>
-            {   provider.reviews ?
-                provider.reviews.map(review =>
+            {   provider.reviewsOfMe ?
+                provider.reviewsOfMe.map(review =>
                     <Review key={review.id} review={review}/>
                 ) : ''
             }
