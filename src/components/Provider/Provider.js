@@ -160,8 +160,8 @@ const Provider = ({provider}) =>
             <a name="faqs"/>
             <h3>FAQs</h3>
             {
-                provider.faqs ?
-                provider.faqs.map(faq =>
+                provider.frequentlyAskedAnswers ?
+                provider.frequentlyAskedAnswers.map(faq =>
                     <FAQ key={faq.id} faq={faq}/>
                 ) : ''
             }
