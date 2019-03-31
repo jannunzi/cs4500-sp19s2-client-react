@@ -11,6 +11,7 @@ import Provider from './components/Provider/Provider'
 import SearchBar from './components/SearchBar/SearchBar'
 import serviceCategories from './data/service-categories.mock.json'
 import ServiceCategoryService from './services/ServiceCategoryService'
+import ProviderContainer from './components/Provider/ProviderContainer'
 
 class App extends Component {
     constructor(props) {
@@ -45,17 +46,16 @@ class App extends Component {
                   <Link to="/services"> Services</Link> |
                   <Link to="/providers"> Providers</Link> |
                   <Link to="/admin"> Admin</Link> |
-                  <Link to="/provider"> Provider</Link>
+                  <Link to="/provider/2"> Provider</Link>
                   <br/>
                   <br/>
                   <br/>
 
                   <Route
-                      path="/provider"
+                      path="/provider/:id"
                       exact
-                      render={() =>
-                          <Provider
-                              provider={serviceCategories[0].serviceProviders[0]}/>}/>
+                      render={() => <ProviderContainer/>}
+                  />
                   <Route
                       path="/home"
                       exact

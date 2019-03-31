@@ -4,7 +4,7 @@ import Review from './Review'
 import FAQ from './FAQ'
 import SearchBar from '../SearchBar/SearchBar'
 
-const Provider = ({provider, history}) =>
+const Provider = ({provider}) =>
     <div>
 
         <div className="row">
@@ -44,7 +44,7 @@ const Provider = ({provider, history}) =>
                 <i className="fa fa-star cs4500-yellow"/>
                 <i className="fa fa-star cs4500-yellow"/>
                 <i className="fa fa-star cs4500-yellow"/>
-                ({provider.reviews.length})
+                ({provider.reviewsOfMe ? provider.reviewsOfMe.length : ''})
             </div>
         </div>
         <div>
@@ -75,11 +75,8 @@ const Provider = ({provider, history}) =>
             <div className="col-6">
                 <h4>Payment methods</h4>
                 <i className="fa fa-usd"/>
-                {
-                    provider.paymentMethods.map(
-                        paymentMethod => ` ${paymentMethod},`
-                    )
-                }
+                &nbsp;
+                {provider.paymentMethods}
             </div>
         </div>
         <hr/>
@@ -105,31 +102,37 @@ const Provider = ({provider, history}) =>
         </div>
         <div className="row">
             <div className="col-4">
-                <h4>{provider.rating}</h4>
+                <h4>
+                    {provider.rating ? provider.rating : ''}
+                </h4>
                 <i className="fa fa-star cs4500-yellow wd-font-size-2-em"/>
                 <i className="fa fa-star cs4500-yellow wd-font-size-2-em"/>
                 <i className="fa fa-star cs4500-yellow wd-font-size-2-em"/>
                 <i className="fa fa-star cs4500-yellow wd-font-size-2-em"/>
                 <i className="fa fa-star cs4500-yellow wd-font-size-2-em"/>
                 <br/>
-                {provider.reviews.length} reviews
+                {
+                    provider.reviewsOfMe ?
+                    provider.reviewsOfMe.length : ''
+                } reviews
             </div>
             <div className="col-8">
                 {
+                    provider.ratingScores ?
                     provider.ratingScores.map((score, index) =>
                         <Rating key={index}
                                 index={5-index}
                                 score={score}/>
-                    )
+                    ) : ''
                 }
             </div>
         </div>
         <br/>
         <div>
-            {
+            {   provider.reviews ?
                 provider.reviews.map(review =>
                     <Review key={review.id} review={review}/>
-                )
+                ) : ''
             }
             <div className="center">
                 <nav aria-label="...">
@@ -157,9 +160,10 @@ const Provider = ({provider, history}) =>
             <a name="faqs"/>
             <h3>FAQs</h3>
             {
+                provider.faqs ?
                 provider.faqs.map(faq =>
                     <FAQ key={faq.id} faq={faq}/>
-                )
+                ) : ''
             }
         </div>
     </div>
