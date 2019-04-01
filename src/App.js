@@ -12,6 +12,11 @@ import SearchBar from './components/SearchBar/SearchBar'
 import serviceCategories from './data/service-categories.mock.json'
 import ServiceCategoryService from './services/ServiceCategoryService'
 import ProviderContainer from './components/Provider/ProviderContainer'
+import Register from './components/Register/Register'
+import Profile from './components/Profile/Profile'
+import Business from './components/Business/Business'
+import ServiceQuestions from './components/ServiceQuestions/ServiceQuestions'
+import Login from './components/Login/Login'
 
 class App extends Component {
     constructor(props) {
@@ -46,10 +51,45 @@ class App extends Component {
                   <Link to="/services"> Services</Link> |
                   <Link to="/providers"> Providers</Link> |
                   <Link to="/admin"> Admin</Link> |
-                  <Link to="/provider/2"> Provider</Link>
+                  <Link to="/provider/2"> Provider</Link> |
+                  <Link to="/register"> Register</Link> |
+                  <Link to="/login"> Login</Link> |
+                  <Link to="/profile"> Profile</Link> |
+                  <Link to="/business"> Business</Link> |
+                  <Link to="/service-questions"> Service Questions</Link>
                   <br/>
                   <br/>
                   <br/>
+
+                  <Route
+                      path="/login"
+                      exact
+                      render={() => <Login/>}
+                  />
+
+                  <Route
+                      path="/service-questions"
+                      exact
+                      render={() => <ServiceQuestions/>}
+                  />
+
+                  <Route
+                      path="/profile"
+                      exact
+                      render={() => <Profile/>}
+                  />
+
+                  <Route
+                      path="/register"
+                      exact
+                      render={() => <Register/>}
+                  />
+
+                  <Route
+                      path="/business"
+                      exact
+                      render={() => <Business/>}
+                  />
 
                   <Route
                       path="/provider/:id"

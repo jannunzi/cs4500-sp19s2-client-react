@@ -40,3 +40,8 @@ code {
 .wd-font-size-2-em {
   font-size: 2em !important;
 }
+
+.btn.btn-success.btn-block,
+.btn.btn-primary.btn-block {
+  color: white
+}
