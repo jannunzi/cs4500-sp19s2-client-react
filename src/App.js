@@ -17,6 +17,7 @@ import Profile from './components/Profile/Profile'
 import Business from './components/Business/Business'
 import ServiceQuestions from './components/ServiceQuestions/ServiceQuestions'
 import Login from './components/Login/Login'
+import UMLClassDiagram from './components/UMLClassDiagram/UMLClassDiagram'
 
 class App extends Component {
     constructor(props) {
@@ -29,24 +30,25 @@ class App extends Component {
         }
     }
     componentDidMount() {
-        this.serviceCategoryService.findAllServiceCategories(4)
-            .then(serviceCategories => this.setState({
-                pillServiceCategories: serviceCategories
-            }))
-        this.serviceCategoryService.findAllServiceCategories(6)
-            .then(serviceCategories => this.setState({
-                tabServiceCategories: serviceCategories
-            }))
-        this.serviceCategoryService.findAllServiceCategories()
-            .then(serviceCategories => this.setState({
-                allServices: serviceCategories
-            }))
+        // this.serviceCategoryService.findAllServiceCategories(4)
+        //     .then(serviceCategories => this.setState({
+        //         pillServiceCategories: serviceCategories
+        //     }))
+        // this.serviceCategoryService.findAllServiceCategories(6)
+        //     .then(serviceCategories => this.setState({
+        //         tabServiceCategories: serviceCategories
+        //     }))
+        // this.serviceCategoryService.findAllServiceCategories()
+        //     .then(serviceCategories => this.setState({
+        //         allServices: serviceCategories
+        //     }))
     }
   render() {
     return (
       <div className="container">
           <Router>
               <div>
+                  <Link to="/uml">UML</Link> |
                   <Link to="/home">Home</Link> |
                   <Link to="/services"> Services</Link> |
                   <Link to="/providers"> Providers</Link> |
@@ -60,6 +62,12 @@ class App extends Component {
                   <br/>
                   <br/>
                   <br/>
+
+                  <Route
+                      path="/uml"
+                      exact
+                      render={() => <UMLClassDiagram/>}
+                  />
 
                   <Route
                       path="/login"
